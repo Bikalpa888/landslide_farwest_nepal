@@ -1,12 +1,18 @@
-# Spatially robust landslide susceptibility mapping in Far-Western Nepal
+# Random versus Spatial Cross-Validation in Landslide Susceptibility Mapping (Far-Western Nepal)
 
 Code for the paper by **Bikalpa Dhungana** (Virinchi College / Asia e University, Kathmandu).
 
-The study asks a simple question: *how much does the usual random train/test split
-overstate the accuracy of machine-learning landslide maps in the Nepal Himalaya?*
-It compares random and spatial-block cross-validation for four models on a real,
-published inventory of 26,350 landslides, tests transfer to later monsoon years,
-explains the model with SHAP, and produces a 30 m susceptibility map.
+* Processed data: https://doi.org/10.5281/zenodo.23666655
+* Code: https://github.com/Bikalpa888/landslide_farwest_nepal
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Bikalpa888/landslide_farwest_nepal/blob/main/reproduce_results.ipynb)
+
+The study compares random and spatial-block cross-validation for logistic
+regression, random forest, XGBoost and a multilayer perceptron on a published
+inventory of 26,350 landslides in Far-Western Nepal (25,280 landslide and
+25,122 non-landslide samples, 14 conditioning factors). It also tests the effect
+of block size, transfer from 1992-2010 to 2011-2018 landslides, explains the
+model with SHAP, and produces a 30 m susceptibility map.
 
 ## Data (all open)
 
@@ -24,9 +30,9 @@ explains the model with SHAP, and produces a 30 m susceptibility map.
 
 ## How to reproduce the results (recommended, no Earth Engine needed)
 
-1. Open `reproduce_results.ipynb` in Google Colab.
-2. In Step 1 set `REPO_URL` (this repository) and `ZENODO_RECORD` (the processed data archive).
-3. Run all cells (about 90 minutes on the free CPU).
+1. Click the **Open in Colab** badge above (or open `reproduce_results.ipynb` in Google Colab).
+2. Click **Runtime → Run all** (the repository and data links are already filled in).
+3. Wait (about 90 minutes on the free CPU).
 4. The last cell (`verify_results.py`) prints PASS for every published number.
 
 The processed data archive contains `samples.csv`, `dated_samples.csv`,
