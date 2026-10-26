@@ -58,6 +58,7 @@ superseded by `GLO30_2024_1`), so use the archived data for exact reproduction.
 | E3 | Temporal transfer: train on landslides dated 1992-2010, test on 2011-2018 |
 | E4 | SHAP importance and dependence for XGBoost |
 | E5 | Susceptibility classes (quantile breaks) and frequency ratio of mapped landslide area |
+| E6 | Vegetation ablation: LR and XGBoost without NDVI, and without NDVI + land cover (`python ablation_ndvi.py`, ~10 min) |
 
 `MAP_MODEL` in `config.py` sets the model used for the map (XGBoost in the paper).
 
